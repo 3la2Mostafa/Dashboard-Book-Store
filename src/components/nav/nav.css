@@ -1,0 +1,54 @@
+.bg{
+    background-color: #ccafaf;
+    width: calc(100% - 80%);
+    height: 100% !important;
+}
+.nav-pills{
+    color: #000 !important;
+    background-color: #900c3f !important;
+    padding: 15px 100px 15px 0px;
+    border-radius: 5px;
+    /* --bs-nav-pills-link-active-color: #000 !important;
+    --bs-nav-pills-link-active-bg: #900c3f !important; */
+}
+.mb-auto{
+    margin-bottom: auto !important;
+}
+.logo{
+    color: #900c3f;
+    padding-left: 20px;
+}
+.div-navbar{
+    padding: 1rem;
+}
+.div-navbar a i{
+    color: black;
+    font-size: 30px;
+    padding-right: 20px;
+}
+/* .nav-link{
+    text-decoration: none !important;
+} */
+.div-navbar .nav-link span{ 
+    color: black;
+    font-size: 1.8rem;
+}
+.footer{
+    background-color: #ccafaf;
+}
+
+@media only screen and (max-width: 1200px) {
+    .bg {
+      width: 30%;
+    }
+  }
+@media only screen and (max-width: 1000px) {
+    .bg {
+      width: 40%;
+    }
+  }
+@media only screen and (max-width: 700px) {
+    .bg {
+      width: 50%;
+    }
+  }
