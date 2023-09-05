@@ -1,0 +1,25 @@
+.view-book{
+    width: 1000px;
+    margin-left: 35%;
+    margin-top: 10%;
+    color: white !important;
+    background-color: #900c3f !important;
+    box-shadow: 10px 10px 5px #b78181;
+}
+.view-book img{
+    border-radius: 2%;
+    height: 100%;
+    width: 350px;
+}
+.view-book .card-body span{
+    color: black;
+}
+/* btn */
+/* .view{
+    color: #900c3f !important;
+    border-color: #900c3f !important;
+}
+.view:hover{
+    background-color: #900c3f !important;
+    color: white !important;
+} */

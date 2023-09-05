@@ -10,6 +10,9 @@ import Users from './components/users/users';
 import Orders from "./components/order/order";
 import Admins from './components/admins/admins';
 import Books from './components/books/books';
+import Home from "./components/dashboard/home";
+import ViewBooks from "./components/view/books/viewBooks";
+import ViewUsers from "./components/view/users/ViewUsers";
 
 
 
@@ -19,6 +22,7 @@ function App() {
     <>
     <Navbar/>
     <Routes>
+      <Route path="/dashboard" element={<Home />}></Route>
       <Route path="/category" element={<Category />}></Route>
       <Route path="/books" element={<Books />}></Route>
       <Route path="/addbook" element={<AddBook />}></Route>
@@ -27,8 +31,12 @@ function App() {
       <Route path="/admins" element={<Admins />}></Route>
       <Route path="/users" element={<Users />}></Route>
       <Route path="/orders" element={<Orders />}></Route>
+      ///////////////////////////////////////////////////////
+      ///Views of Data///
+      <Route path="/viewbooks/:id" element={<ViewBooks />}></Route>
+      <Route path="/viewusers/:id" element={<ViewUsers />}></Route>
     </Routes>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }
