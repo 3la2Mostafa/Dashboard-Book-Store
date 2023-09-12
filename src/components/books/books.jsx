@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "../../style.css";
 
 function Books() {
 
@@ -9,8 +10,8 @@ function Books() {
 
   return (
     <>
-      <div className="container p-4" style={{ marginLeft: '25%' , backgroundColor:"#900c3f"}}>
-      <table className="table table-hover">
+      <div className="p-4 container-width">
+      <table className="table table-hover ">
         <thead className="text-center mb-2">
           <tr>
             <th scope="col">Img</th>
@@ -25,11 +26,11 @@ function Books() {
         <tbody className="text-center">
           {books.map((book)=>{
             return(
-              <tr key={book._id}>
-                <td><img src={book.bookImage} height={100}/></td>
+              <tr key={book._id} className="info-table">
+                <td><img className="rounded" src={book.bookImage} height={100}/></td>
                 <td>{book.bookTitle}</td>
                 <td>{book.bookPages}</td>
-                <td>{book.price}</td>
+                <td>{book.price}.00 EGP</td>
                 <td>{book.bookStock}</td>
                 <td>{book.description}</td>
                 <td>

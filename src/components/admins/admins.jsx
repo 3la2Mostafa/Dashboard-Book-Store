@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "../../style.css";
 
 
 function Admins() {
@@ -23,7 +24,7 @@ function Admins() {
       <div className="text-bg-light p-2 text-center" style={{ marginLeft: '20%' , backgroundColor:"#900c3f"}}>
         <h2 className="text-dark p-2">Count of Admins : {admins.length} </h2>
       </div>
-      <div className="container p-4" style={{ marginLeft: '26%' , backgroundColor:"#900c3f" , marginTop:"3%"}}>
+      <div className="p-4 container-width" style={{ marginTop:"3%"}}>
       <table className="table table-hover">
         <thead className="text-center">
           <tr>

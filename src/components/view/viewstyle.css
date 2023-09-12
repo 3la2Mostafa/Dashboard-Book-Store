@@ -1,6 +1,6 @@
 .view{
-    width: 1000px;
-    margin-left: 35%;
+    width: 60%;
+    margin-left: 30%;
     margin-top: 10%;
     color: white !important;
     background-color: #900c3f !important;
@@ -9,11 +9,11 @@
 .view img{
     border-radius: 2%;
     height: 100%;
-    width: 380px;
+    width: 100%;
 }
 .view .card-body span{
     color: black;
 }
-.view .card-body h3{
-    padding-bottom: 1rem;
+.view .card-body h4{
+    padding-bottom: 0.6rem;
 }

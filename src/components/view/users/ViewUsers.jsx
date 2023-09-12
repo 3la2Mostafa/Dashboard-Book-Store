@@ -22,11 +22,11 @@ function ViewUsers() {
             </div>
             <div className="col-md-8">
                 <div className="card-body p-5">
-                    <h2 className="card-title pb-4"><span>Full Name : </span>{user.firstName} {user.lastName}</h2>
-                    <h3 className="card-text"><span className="fw-semibold">Email : </span>{user.email}</h3>
-                    <h3 className="card-text"><span className="fw-semibold">Phone : </span>{user.phoneNumber}</h3>
-                    <h3 className="card-text"><span className="fw-semibold">Country : </span>{user.country}</h3>
-                    <h3 className="card-text"><span className="fw-semibold">Address : </span>{user.address}</h3>
+                    <h3 className="card-title pb-2"><span>Full Name : </span>{user.firstName} {user.lastName}</h3>
+                    <h4 className="card-text"><span className="fw-semibold">Email : </span>{user.email}</h4>
+                    <h4 className="card-text"><span className="fw-semibold">Phone : </span>{user.phoneNumber}</h4>
+                    <h4 className="card-text"><span className="fw-semibold">Country : </span>{user.country}</h4>
+                    <h4 className="card-text"><span className="fw-semibold">Address : </span>{user.address}</h4>
                 </div>
             </div>
         </div>

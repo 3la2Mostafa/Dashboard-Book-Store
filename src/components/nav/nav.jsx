@@ -10,7 +10,7 @@ function Navbar() {
         <div className="div-navbar">
         <a className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="index.html">
             <img src="/assets/img/nav_img.png" alt="logo" height="50" />
-            <span className="fs-3 logo">Alef BookStore</span>
+            <span className="fs-5 logo">Alef BookStore</span>
         </a>
         <hr/>
 

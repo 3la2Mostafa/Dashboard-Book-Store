@@ -9,7 +9,7 @@ function Users() {
 
   return (
     <>
-      <div className="container p-4" style={{ marginLeft: '25%' , backgroundColor:"#900c3f"}}>
+      <div className="p-4 container-width">
       <table className="table table-hover">
         <thead className="text-center mb-2">
           <tr>
@@ -23,11 +23,11 @@ function Users() {
             <th scope="col">Action</th>
           </tr>
         </thead>
-        <tbody className="text-center">
+        <tbody className="text-center info-table">
           {users.map((user)=>{
             return(
               <tr key={user._id}>
-                <td><img src={user.image} height={100}/></td>
+                <td><img className="rounded-circle" src={user.image} height={100}/></td>
                 <td>{user.firstName}</td>
                 <td>{user.lastName}</td>
                 <td>{user.email}</td>
@@ -36,9 +36,9 @@ function Users() {
                 <td>{user.address}</td>
                 <td>
                   <Link to={`/viewusers/${user._id}`}>
-                    <button type="button" className="btn btn-outline-primary">View</button>
+                    <button type="button" className="btn btn-outline-primary m-1">View</button>
                   </Link>
-                  <button type="button" className="btn btn-outline-primary mx-2">Update</button>
+                  <button type="button" className="btn btn-outline-primary m-1">Update</button>
                   <button type="button" className="btn btn-outline-primary">Delete</button>
                 </td>
               </tr>

@@ -1,59 +1,68 @@
-.bg{
+.bg {
   position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: 3;
-    background-color: #ccafaf;
-    box-shadow: 10px 10px 5px #b19292;
-    width: calc(100% - 80%);
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 3;
+  background-color: #ccafaf;
+  box-shadow: 10px 10px 5px #b19292;
+  width: calc(100% - 80%);
 }
-.active{
-    color: #000 !important;
-    background-color: #900c3f !important;
-    padding: 5px 70px 5px 20px;
-    border-radius: 5px;
-    /* --bs-nav-pills-link-active-color: #000 !important;
-    --bs-nav-pills-link-active-bg: #900c3f !important; */
+
+.active 
+/* , .div-navbar .nav-link:hover */
+{
+  color: #000 !important;
+  background-color: #900c3f !important;
+  padding: 5px 50px 5px 20px;
+  border-radius: 5px;
 }
-.mb-auto{
-    margin-bottom: auto !important;
+
+.mb-auto {
+  margin-bottom: auto !important;
 }
-.logo{
-    color: #900c3f;
-    padding-left: 20px;
+
+.logo {
+  color: #900c3f;
+  padding-left: 20px;
 }
-.div-navbar{
-    padding: 1rem;
+
+.div-navbar {
+  padding: 1rem;
 }
-.div-navbar a i{
-    color: black;
-    font-size: 30px;
-    padding-right: 20px;
+
+.div-navbar a i {
+  color: black;
+  font-size: 1.2rem;
+  padding-right: 20px;
 }
-/* .nav-link{
-    text-decoration: none !important;
+
+/* .div-navbar .nav-link{
+  text-decoration: none !important;
 } */
-.div-navbar .nav-link span{ 
-    color: black;
-    font-size: 1.8rem;
+.div-navbar .nav-link span {
+  color: black;
+  font-size: 1.2rem;
 }
-.footer{
-    background-color: #ccafaf;
+
+.footer {
+  background-color: #ccafaf;
 }
 
 @media only screen and (max-width: 1200px) {
-    .bg {
-      width: 30%;
-    }
+  .bg {
+    width: 30%;
   }
+}
+
 @media only screen and (max-width: 1000px) {
-    .bg {
-      width: 40%;
-    }
+  .bg {
+    width: 40%;
   }
+}
+
 @media only screen and (max-width: 700px) {
-    .bg {
-      width: 50%;
-    }
+  .bg {
+    width: 50%;
   }
+}
