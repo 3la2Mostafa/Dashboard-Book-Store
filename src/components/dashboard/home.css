@@ -1,0 +1,8 @@
+.dashboard{
+    margin-top: 5%;
+    background-color: white;
+}
+.dashboard .card{
+    width: 23%;
+    background-color: #b78181;
+}

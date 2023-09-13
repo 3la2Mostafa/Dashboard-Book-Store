@@ -25,7 +25,7 @@ function Admins() {
         <h2 className="text-dark p-2">Count of Admins : {admins.length} </h2>
       </div>
       <div className="p-4 container-width" style={{ marginTop:"3%"}}>
-      <table className="table table-hover">
+      <table className="table table-hover m-0">
         <thead className="text-center">
           <tr>
             <th scope="col">Email</th>

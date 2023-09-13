@@ -3,6 +3,7 @@ import { Form, Formik, ErrorMessage, Field } from "formik";
 import axiosInstance from "../../config/axiosConfig";
 import BookValidat from "../../Validation/BookValidate";
 import "./add-book.css";
+import swal from "sweetalert";
 
 
 const AddBook = () => {
@@ -29,9 +30,11 @@ const AddBook = () => {
     console.log(object);
     try {
       const bookObject = await axiosInstance.post("/books", object);
-      console.log("success req object of book" , bookObject);
+      console.log("success req object of book" , bookObject); 
+      swal("Added book" , "The book has been added successfully" ,"success" , {button:false});
     } catch (err) {
-      console.log("error in form" , er)
+      console.log("error in form" , er);
+      swal("Try Again", "Added book is rejected " ,"warning");
     }
   };
 

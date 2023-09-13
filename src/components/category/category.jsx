@@ -23,8 +23,8 @@ function Category() {
       <div className="text-bg-light p-2 text-center" style={{ marginLeft: '20%' }}>
         <h2 className="text-dark p-2">Count of Category : {categories.length} </h2>
       </div>
-      <div className="p-4 container-width" style={{ marginTop:"3%"}}>
-      <table className="table table-hover">
+      <div className="p-4 container-width" >
+      <table className="table table-hover m-0">
         <thead className="text-center">
           <tr>
             <th scope="col">Name</th>
