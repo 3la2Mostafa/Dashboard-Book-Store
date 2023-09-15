@@ -56,7 +56,6 @@ function Home() {
         </div>
       {/* </div> */}
     </div>
-     
     </>
   );
 }

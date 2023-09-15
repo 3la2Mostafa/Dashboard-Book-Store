@@ -17,7 +17,7 @@ function Navbar() {
         <ul className="nav flex-column mb-auto">
         <NavLink to="/dashboard" >
             <a className="nav-link" aria-current="page" href="#">
-                <i className="bi bi-house-door-fill"></i>
+                <i className="bi bi-house-door"></i>
                 <span>Dashboard</span>
             </a>
         </NavLink>
@@ -66,7 +66,7 @@ function Navbar() {
      
         <NavLink to="/admins">
             <a className="nav-link" aria-current="page" href="#">
-                <i className="bi bi-people-fill"></i>
+                <i className="bi bi-people"></i>
                 <span>Admins</span>
             </a>
         </NavLink>
