@@ -1,11 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import { Form, Formik, ErrorMessage, Field } from "formik";
 import axiosInstance from "../../config/axiosConfig";
 import BookValidat from "../../Validation/BookValidate";
 import "./add-book.css";
+import Axios from "axios";
 
 
 const AddBook = () => {
+  const [imageSelected, setImageSelected]= useState(null)
+
   const initialValues = {
     bookTitle: "",
     publishedYear: "",
@@ -18,20 +21,23 @@ const AddBook = () => {
     bookStock: "",
     bookImage: "",
   };
-  // const submit = (values) => {
-  //   setTimeout(() => {
-  //     alert(JSON.stringify(values, null, 2));
-  //     console.log("fatma");
-  //     console.log(values);
-  //   }, 1000);
-  // };
+
   const handleSubmit = async (object) => {
-    console.log(object);
     try {
-      const bookObject = await axiosInstance.post("/books", object);
-      console.log("success req object of book" , bookObject);
-    } catch (err) {
-      console.log("error in form" , er)
+      // Upload the image first
+      const formData = new FormData();
+      formData.append('file', imageSelected); //file: imageSelected -> Access the form then add to Key file => value imageSelected 
+      formData.append('upload_preset', 're8cqbkj'); // this line related by server 'cloudinary' as configuration 
+      //send post req to this url with formData
+      const response = await Axios.post("https://api.cloudinary.com/v1_1/dxghziwrc/image/upload", formData);
+      const imageUrl = response.data.secure_url; //receve created imageUrl
+  
+      const bookObject = {...object, bookImage: imageUrl  };
+  
+      const createdBook = await axiosInstance.post("/books", bookObject);
+      console.log("Success creating book:", createdBook);
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
@@ -39,8 +45,6 @@ const AddBook = () => {
     <Formik
       initialValues={initialValues}
       validate={BookValidat}
-      // validationSchema={BookSchema}
-      // onSubmit={submit}
       onSubmit={handleSubmit}
     >
       {(props) => (
@@ -176,16 +180,19 @@ const AddBook = () => {
           </div>
           <div className="col-12">
             <label htmlFor="bookImage" className="form-label">Cover Image</label>
-            <Field
+           <Field
               type="file"
               className="form-control"
               id="bookImage"
               name="bookImage"
-              onChange={props.handleChange}
+              onChange={(e)=>{
+                props.handleChange(e);
+                setImageSelected(e.target.files[0]);
+              }}
               onBlur={props.handleBlur}
               value={props.values.bookImage}
             />
-            <ErrorMessage name="bookImage" component="div" />
+            <ErrorMessage name="bookImage" component="div" /> 
           </div>
 
           <div className="col-12 text-center py-1">

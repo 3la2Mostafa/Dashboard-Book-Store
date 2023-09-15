@@ -4,8 +4,10 @@ import React from "react";
 function Home() {
   
   return (
-    <>
-    <h1 className="text-center position-absolute bottom-50 end-50">Home</h1>
+    <> 
+      <div className="d-flex justify-content-center align-items-center text-center" style={{ height: '100vh' }}>
+        <h1 className="" style={{paddingLeft:'250px'}}>Alef Book Store</h1>
+      </div>
     </>
   )
 }
