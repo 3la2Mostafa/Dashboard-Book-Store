@@ -1,7 +1,7 @@
 .container-width{
     max-width: calc(100% - 25%);
     background-color:#900c3f;
-    margin-left: 23%;
+    margin-left: 23% !important;
 }
 .info-table td{
     font-size: 0.8rem !important;

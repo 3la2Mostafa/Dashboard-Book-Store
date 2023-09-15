@@ -4,6 +4,8 @@ import axiosInstance from "../../config/axiosConfig";
 import BookValidat from "../../Validation/BookValidate";
 import "./add-book.css";
 import Axios from "axios";
+import swal from "sweetalert";
+
 
 
 const AddBook = () => {
@@ -24,6 +26,7 @@ const AddBook = () => {
 
   const handleSubmit = async (object) => {
     try {
+
       // Upload the image first
       const formData = new FormData();
       formData.append('file', imageSelected); //file: imageSelected -> Access the form then add to Key file => value imageSelected 
@@ -36,9 +39,11 @@ const AddBook = () => {
   
       const createdBook = await axiosInstance.post("/books", bookObject);
       console.log("Success creating book:", createdBook);
+      swal("Added book" , "The book has been added successfully" ,"success" , {button:false});
     } catch (error) {
       console.error("Error:", error);
-    }
+      swal("Try Again", "Added book is rejected " ,"warning");
+    } 
   };
 
   return (
