@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "../../style.css";
+import Navbar from "../nav/nav";
 
 
 function Admins() {
@@ -10,17 +11,7 @@ function Admins() {
 
   return (
     <>
-      {/* <div className="text-bg-light p-2 text-center" style={{ marginLeft: '20%' , backgroundColor:"#900c3f"}}>
-        <h2 className="text-dark p-2">Add New Category</h2>
-      </div>
-      <form className="row g-3 p-5" style={{ marginLeft: '25%' }}>
-        <div className="col-md-8">
-          <input type="text" className="form-control py-2" id="admin" name="admin" placeholder="Add new admin"/>
-        </div>
-        <div className="col-md-4">
-          <button type="submit" className="btn btn-primary px-3">Add</button>
-        </div>
-      </form> */}
+      <Navbar/>
       <div className="text-bg-light p-2 text-center" style={{ marginLeft: '20%' , backgroundColor:"#900c3f"}}>
         <h2 className="text-dark p-2">Count of Admins : {admins.length} </h2>
       </div>

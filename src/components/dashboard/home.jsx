@@ -1,9 +1,11 @@
 import React from "react";
 import './home.css';
+import Navbar from "../nav/nav";
 
 function Home() {
   return (
     <>
+    <Navbar/>
     <div className="container-width row row-cols-1 row-cols-md-4 g-3 dashboard">
       {/* <div className="col"> */}
         <div className="card m-2">

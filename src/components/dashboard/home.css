@@ -1,5 +1,5 @@
 .dashboard{
-    margin-top: 5%;
+    margin-top: 5% !important;
     background-color: white;
 }
 .dashboard .card{

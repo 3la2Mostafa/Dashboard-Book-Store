@@ -2,6 +2,7 @@ import React  from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import './viewbook.css';
+import Navbar from "../../nav/nav";
 
 function ViewBooks() {
 
@@ -15,6 +16,7 @@ function ViewBooks() {
 
   return (
     <>
+    <Navbar/>
       <div className="card text-center view-book">
         <div class="row g-0 card-book">
           <div class="col-md-4">

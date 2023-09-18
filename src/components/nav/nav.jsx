@@ -1,9 +1,22 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './nav.css';
 
 
 function Navbar() {
+
+  const navigate = useNavigate();
+  
+  const handleLogout = async () => {
+    try {
+        swal("Successfuly Logout","Go to login form to login as new admin", "success", {button: false});
+        navigate("/login");
+        localStorage.clear();
+        console.log("successfully logged out");
+    } catch (err) {
+        console.error("Error:", err);
+    }
+  };
   return (
     <>
       <div className="bg d-flex flex-column flex-shrink-0 p-3">
@@ -69,17 +82,17 @@ function Navbar() {
                 <i className="bi bi-people"></i>
                 <span>Admins</span>
             </a>
-        </NavLink>
-      
+        </NavLink><hr/>
+{/*       
         <NavLink to="/addadmin">
             <a className="nav-link" aria-current="page" href="#">
                 <i className="bi bi-person-plus"></i>
                 <span>Add Admin</span>
             </a>
-        </NavLink><hr/>
+        </NavLink><hr/> */}
 
-        <NavLink to='/logout'>
-            <a className="nav-link" aria-current="page" href="#">
+        <NavLink to='/login'>
+            <a className="nav-link" aria-current="page" href="#" onClick={handleLogout}>
                 <i className="bi bi-door-open"></i>
                 <span>LogOut</span>
             </a>

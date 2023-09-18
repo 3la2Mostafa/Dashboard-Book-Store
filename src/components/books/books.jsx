@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../../style.css";
+import Navbar from "../nav/nav";
 
 function Books() {
 
@@ -10,6 +11,7 @@ function Books() {
 
   return (
     <>
+      <Navbar/>
       <div className="p-4 container-width">
       <table className="table table-hover ">
         <thead className="text-center mb-2">
