@@ -9,7 +9,6 @@ function Navbar() {
   
   const handleLogout = async () => {
     try {
-        swal("Successfuly Logout","Go to login form to login as new admin", "success", {button: false});
         navigate("/login");
         localStorage.clear();
         console.log("successfully logged out");
@@ -56,12 +55,12 @@ function Navbar() {
             </a>
         </NavLink> 
         
-        <NavLink to="/editbook">
+        {/* <NavLink to="/editbook">
             <a className="nav-link" aria-current="page" href="#">
                 <i className="bi bi-pencil-square"></i>
                 <span>Edit Book</span>
             </a>
-        </NavLink>
+        </NavLink> */}
        
         <NavLink to="/orders">
             <a className="nav-link" aria-current="page" href="#">
@@ -83,13 +82,6 @@ function Navbar() {
                 <span>Admins</span>
             </a>
         </NavLink><hr/>
-{/*       
-        <NavLink to="/addadmin">
-            <a className="nav-link" aria-current="page" href="#">
-                <i className="bi bi-person-plus"></i>
-                <span>Add Admin</span>
-            </a>
-        </NavLink><hr/> */}
 
         <NavLink to='/login'>
             <a className="nav-link" aria-current="page" href="#" onClick={handleLogout}>

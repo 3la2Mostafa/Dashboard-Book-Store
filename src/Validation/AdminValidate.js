@@ -15,13 +15,6 @@ const AdminValidate = (values) => {
     errors.password = "Invalid must be matched (P@ssword123)";
   }
 
-  // if (!values.confpass) {
-  //   errors.confpass = "Confirme your Password";
-  //   console.log(values.confpass);
-  // } else if (values.confpass !== values.password) {
-  //   errors.confpass = "Must be matched password";
-  // }
-
   return errors;
 };
 

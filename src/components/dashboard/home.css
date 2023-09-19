@@ -1,8 +1,19 @@
-.dashboard{
+.dashboard {
     margin-top: 5% !important;
     background-color: white;
 }
-.dashboard .card{
+
+.dashboard .card {
     width: 23%;
     background-color: #b78181;
+}
+
+.chart {
+    border: 2px solid #900c3f;
+    background-color: rgba(183, 129, 129, 0.2);
+    box-shadow: 8px 8px 5px #b78181;
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 3%;
+    width: 70%;
 }
