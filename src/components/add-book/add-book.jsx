@@ -27,7 +27,6 @@ const AddBook = () => {
 
   const handleSubmit = async (object) => {
     try {
-
       // Upload the image first
       const formData = new FormData();
       formData.append('file', imageSelected); //file: imageSelected -> Access the form then add to Key file => value imageSelected 
