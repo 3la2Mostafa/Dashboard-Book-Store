@@ -4,6 +4,8 @@ import { bookId } from '../../store/reducer/booksSlice';
 import { Link } from "react-router-dom";
 import "../../style.css";
 import Axios from 'axios';
+import Navbar from "../nav/nav";
+
 
 function Books() {
   const books = useSelector((state) => state.books.books);
@@ -24,7 +26,8 @@ function Books() {
 
   return (
     <>
-      <div className="container-width" >
+    <Navbar/>
+      <div className="p-4 container-width" >
         <table className="table table-hover">
           <thead className=" text-center" >
             <tr className="rounded">

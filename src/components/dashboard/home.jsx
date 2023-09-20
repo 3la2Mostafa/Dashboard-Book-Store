@@ -1,9 +1,48 @@
 import React from "react";
 import './home.css';
+import Navbar from "../nav/nav";
+import CanvasJSReact from '@canvasjs/react-charts';
+import { useSelector } from "react-redux";
 
 function Home() {
+
+  var CanvasJS = CanvasJSReact.CanvasJS;
+  var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+  const books = useSelector((state) => state.books);
+  const categories = useSelector((state) => state.categories);
+  const orders = useSelector((state) => state.orders);
+  const admins = useSelector((state) => state.admins);
+  const users = useSelector((state) => state.users);
+  ///////////////////////////////////////////////////
+  const booksLength = books.length;
+  const categoriesLength = categories.length;
+  const ordersLength = orders.length;
+  const adminsLength = admins.length;
+  const usersLength = users.length;
+
+const options = {
+  title: {
+    text: "Number of items in every collection"
+  },
+  theme: "light2", //"light1", "dark1", "dark2"
+  data: [{
+    type: "column",
+    dataPoints: [
+      { label: "Admins",  y: adminsLength  },
+      { label: "Users", y: usersLength  },
+      { label: "Books", y: booksLength  },
+      { label: "Orders",  y: ordersLength },
+      { label: "Categories",  y: categoriesLength },
+    ]
+  }],
+  // backgroundColor: [
+  //   'rgba(183, 129, 129,0.2)',
+  // ],
+}
   return (
     <>
+    <Navbar/>
     <div className="container-width row row-cols-1 row-cols-md-4 g-3 dashboard">
       {/* <div className="col"> */}
         <div className="card m-2">
@@ -56,6 +95,10 @@ function Home() {
         </div>
       {/* </div> */}
     </div>
+
+    	<div className="chart">
+			  <CanvasJSChart options = {options} />
+		  </div>
     </>
   );
 }

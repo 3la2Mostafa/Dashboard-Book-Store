@@ -4,6 +4,8 @@ import categorySlice from './reducer/categorySlice';
 import userSlice from './reducer/userSlice';
 import adminSlice from './reducer/adminSlice';
 import authorsSlice  from './reducer/authorSlice';
+import orderSlice from './reducer/orderSlice';
+
 
 
 export default combineReducers({
@@ -13,4 +15,5 @@ export default combineReducers({
     admins:adminSlice,
     authors:authorsSlice
     // loader :loaderSlice,
+    orders:orderSlice,
 });

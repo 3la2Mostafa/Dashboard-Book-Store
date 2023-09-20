@@ -2,6 +2,7 @@ import React  from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import '../viewstyle.css'
+import Navbar from "../../nav/nav";
 
 function ViewUsers() {
 
@@ -15,6 +16,7 @@ function ViewUsers() {
 
   return (
     <>
+    <Navbar/>
       <div className="card text-center view">
         <div className="row g-0">
             <div className="col-md-4">

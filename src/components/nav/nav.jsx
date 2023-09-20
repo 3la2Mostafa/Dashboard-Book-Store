@@ -1,9 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './nav.css';
 
 
 function Navbar() {
+
+  const navigate = useNavigate();
+  
+  const handleLogout = async () => {
+    try {
+        navigate("/login");
+        localStorage.clear();
+        console.log("successfully logged out");
+    } catch (err) {
+        console.error("Error:", err);
+    }
+  };
   return (
     <>
       <div className="bg d-flex flex-column flex-shrink-0 p-3">
@@ -36,6 +48,7 @@ function Navbar() {
             <span>Add Book</span>
         </NavLink> 
 
+
         <NavLink to="/orders" className="nav-link" aria-current="page">
             <i className="bi bi-cart"></i>
             <span>Orders</span>
@@ -44,12 +57,14 @@ function Navbar() {
         <NavLink to="/users" className="nav-link" aria-current="page">
             <i className="bi bi-people"></i>
             <span>Users</span>
+
         </NavLink>
 
         <NavLink to="/admins" className="nav-link" aria-current="page">
             <i className="bi bi-people"></i>
             <span>Admins</span>
         </NavLink>
+
 
         <NavLink to="/addadmin" className="nav-link" aria-current="page">
             <i className="bi bi-person-plus"></i>
@@ -61,10 +76,16 @@ function Navbar() {
             <i className="bi bi-door-open"></i>
             <span>LogOut</span>
         </NavLink>
-        </ul>
+     
        
-        </div>
 
+        <NavLink to='/login' className="nav-link" aria-current="page" onClick={handleLogout}>
+            <i className="bi bi-door-open"></i>
+            <span>LogOut</span>
+        </NavLink>
+
+        </ul>
+        </div>
       </div>
     </>
   );

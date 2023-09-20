@@ -5,6 +5,7 @@ import BookValidat from "../../Validation/BookValidate";
 import "./add-book.css";
 import Axios from "axios";
 import swal from "sweetalert";
+import Navbar from "../nav/nav";
 
 
 
@@ -32,10 +33,11 @@ const AddBook = () => {
       formData.append('upload_preset', 're8cqbkj'); // this line related by server 'cloudinary' as configuration 
       //send post req to this url with formData
       const response = await Axios.post("https://api.cloudinary.com/v1_1/dxghziwrc/image/upload", formData);
+      console.log(response.data);
       const imageUrl = response.data.secure_url; //receve created imageUrl
-  
+      
       const bookObject = {...object, bookImage: imageUrl  };
-  
+      console.log(bookObject);
       const createdBook = await axiosInstance.post("/books", bookObject);
       console.log("Success creating book:", createdBook);
       swal("Added book" , "The book has been added successfully" ,"success" , {button:false});
@@ -46,6 +48,8 @@ const AddBook = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <Formik
       initialValues={initialValues}
       validate={BookValidat}
@@ -200,11 +204,12 @@ const AddBook = () => {
           </div>
 
           <div className="col-12 text-center py-1">
-            <button type="submit" className="btn btn-primary p-3">Add Book</button>
+            <button type="submit" className="btn btn-book p-3">Add Book</button>
           </div>
         </Form>
       )}
     </Formik>
+    </>
   );
 };
 
