@@ -13,6 +13,7 @@ import Books from './components/books/books';
 import Home from "./components/dashboard/home";
 import ViewBooks from "./components/view/books/viewBooks";
 import ViewUsers from "./components/view/users/ViewUsers";
+import AurhersAndCategories from "./components/authorsAndCategorys/AurhersAndCategories";
 
 
 
@@ -26,11 +27,12 @@ function App() {
       <Route path="/category" element={<Category />}></Route>
       <Route path="/books" element={<Books />}></Route>
       <Route path="/addbook" element={<AddBook />}></Route>
-      <Route path="/editbook" element={<EditBook />}></Route>
+      <Route path="/editbook/:id" element={<EditBook />}></Route>
       <Route path="/addadmin" element={<AddAdmin />}></Route>
       <Route path="/admins" element={<Admins />}></Route>
       <Route path="/users" element={<Users />}></Route>
       <Route path="/orders" element={<Orders />}></Route>
+      <Route path="/test" element={<AurhersAndCategories />}></Route>
       ///////////////////////////////////////////////////////
       ///Views of Data///
       <Route path="/viewbooks/:id" element={<ViewBooks />}></Route>

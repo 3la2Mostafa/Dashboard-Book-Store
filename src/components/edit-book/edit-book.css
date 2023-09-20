@@ -1,0 +1,27 @@
+.add-book{
+    width: 50%;
+    margin-left: 35% !important; 
+    color: #900c3f !important;
+    border:5px solid #900c3f !important;
+    box-shadow: 10px 10px 5px #b78181;
+}
+.add-book label{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.8rem !important;
+}
+.btn{
+    
+    color: white !important;
+    font-size: 0.8rem !important;
+    font-weight: bolder !important;
+    border-color: #ccafaf !important;
+    background-color: #ccafaf !important;
+}
+.btn:hover{
+    background-color: white !important;
+    color: #900c3f !important;
+}
+/* .error{
+    color: #b78181 !important;
+} */
