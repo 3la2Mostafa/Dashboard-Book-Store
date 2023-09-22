@@ -2,12 +2,24 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "../../style.css";
 import Navbar from "../nav/nav";
+import axiosInstance from "../../config/axiosConfig";
 
 
 function Admins() {
   
   const admins = useSelector((state) => state.admins);
-  console.log("Admins ---->" , admins)
+  console.log("Admins ---->" , admins);
+
+  const deleteAdmin  = (adminId)=>{
+    axiosInstance.delete(`/admins/${adminId}`).then(
+      response => { 
+        swal("Delete Admin" , "Admin has been deleted successfully" ,"success" , {button:false});
+        console.log('Admin deleted successfully', response);
+      }
+    ).catch(error => {
+      console.log('Error deleting Admin', error);
+    });
+  };
 
   return (
     <>
@@ -15,7 +27,7 @@ function Admins() {
       <div className="text-bg-light p-2 text-center" style={{ marginLeft: '20%' , backgroundColor:"#900c3f"}}>
         <h2 className="text-dark p-2">Count of Admins : {admins.length} </h2>
       </div>
-      <div className="p-4 container-width" style={{ marginTop:"3%"}}>
+      <div className="p-2 container-width">
       <table className="table table-hover m-0">
         <thead className="text-center">
           <tr>
@@ -29,7 +41,7 @@ function Admins() {
               <tr key={admin._id}>
                 <td>{admin.email}</td>
                 <td>
-                  <button type="button" className="btn btn-outline-primary">Delete</button>
+                  <button type="button" className="btn" onClick={()=>deleteAdmin(admin._id)}>Delete</button>
                 </td>
               </tr>
             );

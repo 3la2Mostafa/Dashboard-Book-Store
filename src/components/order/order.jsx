@@ -1,19 +1,31 @@
 import React from "react";
 import Navbar from "../nav/nav";
 import { useSelector } from "react-redux";
+import axiosInstance from "../../config/axiosConfig";
 
 
 function Orders() {
 
   const orders = useSelector((state) => state.orders);
   console.log("Orders ---->" , orders);
+
+  const deleteOrder  = (orderId)=>{
+    axiosInstance.delete(`/orders/${orderId}`).then(
+      response => { 
+        swal("Delete order" , "Order has been deleted successfully" ,"success" , {button:false});
+        console.log('Order deleted successfully', response);
+      }
+    ).catch(error => {
+      console.log('Error deleting order', error);
+    });
+  };
   
   return (
     <>
     <Navbar/>
     <div className="p-4 container-width">
       <table className="table table-hover ">
-        <thead className="p-2 text-center">
+        <thead className="p-2 text-center rounded">
           <tr>
             <th scope="col">User</th>
             <th scope="col">Adress</th>
@@ -28,7 +40,7 @@ function Orders() {
           {orders.map((order)=>{
             return(
               <tr key={order._id} className="info-table">
-                <td className="text-left align-middle">{order.user.firstName} {order.user.lastName}</td>
+                <td className="text-left align-middle fw-bolder"><h6>{order.user.firstName} {order.user.lastName}</h6></td>
                 <td className="text-left align-middle">{order.address}</td>
                 <td className="text-left align-middle">{order.status}</td>
                 <td className="text-left align-middle">{order.paymentMethod}</td>
@@ -41,10 +53,9 @@ function Orders() {
                     </div>
                   );
                 })}</td>
-                <td className="text-left align-middle fw-bolder">{order.totalPrice}.00 EGP</td>
+                <td className="text-left align-middle fw-bolder"><h6>{order.totalPrice}.00 EGP</h6></td>
                 <td className="text-left align-middle">
-                  <button type="button" className="btn btn-outline-primary mx-1">Update</button>
-                  <button type="button" className="btn btn-outline-primary">Delete</button>
+                  <button type="button" className="btn" onClick={()=>deleteOrder(order._id)}>Delete</button>
                 </td>
               </tr>
             );

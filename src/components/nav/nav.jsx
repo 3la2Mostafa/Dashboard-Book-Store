@@ -16,6 +16,7 @@ function Navbar() {
         console.error("Error:", err);
     }
   };
+  
   return (
     <>
       <div className="bg d-flex flex-column flex-shrink-0 p-3">
@@ -48,7 +49,6 @@ function Navbar() {
             <span>Add Book</span>
         </NavLink> 
 
-
         <NavLink to="/orders" className="nav-link" aria-current="page">
             <i className="bi bi-cart"></i>
             <span>Orders</span>
@@ -57,27 +57,12 @@ function Navbar() {
         <NavLink to="/users" className="nav-link" aria-current="page">
             <i className="bi bi-people"></i>
             <span>Users</span>
-
         </NavLink>
 
         <NavLink to="/admins" className="nav-link" aria-current="page">
-            <i className="bi bi-people"></i>
+            <i className="bi bi-person-gear"></i>
             <span>Admins</span>
-        </NavLink>
-
-
-        <NavLink to="/addadmin" className="nav-link" aria-current="page">
-            <i className="bi bi-person-plus"></i>
-            <span>Add Admin</span>
-        </NavLink>
-        <hr/>
-
-        <NavLink to='/logout' className="nav-link" aria-current="page">
-            <i className="bi bi-door-open"></i>
-            <span>LogOut</span>
-        </NavLink>
-     
-       
+        </NavLink><hr/>
 
         <NavLink to='/login' className="nav-link" aria-current="page" onClick={handleLogout}>
             <i className="bi bi-door-open"></i>

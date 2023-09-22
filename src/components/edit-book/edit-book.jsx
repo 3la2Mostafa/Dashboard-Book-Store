@@ -7,6 +7,7 @@ import Select from 'react-select';
 import swal from "sweetalert";
 import Axios from "axios";
 import "./edit-book.css";
+import Navbar from "../nav/nav";
 
 function EditBook() {
   const { id } = useParams();
@@ -52,8 +53,8 @@ function EditBook() {
 
     try {
       if(imageSelected === null){ //if user not select a new image yet add the existance image
-         const updateBook = await axiosInstance.patch(`/books/${id}`,values);
-         console.log("Success updatedBook book:", updateBook);
+        const updateBook = await axiosInstance.patch(`/books/${id}`,values);
+        console.log("Success updated book:", updateBook);
 
       }else{// if user select image add a new image instadde of exist
         setImageSelected(values.bookImage)
@@ -69,14 +70,15 @@ function EditBook() {
         const createdBook = await axiosInstance.patch(`/books/${id}`, bookObject);
         console.log("Success creating book:", createdBook);
       }
-      swal(" updated book" , "The book has been added successfully" ,"success" , {button:false});
+      swal(" updated book" , "The book has been updated successfully" ,"success" , {button:false});
     } catch (error) {
       console.log("Error:", error);
-      swal("Try Again", "Added book is rejected " ,"warning");
+      swal("Try Again", "Update book is rejected " ,"warning");
     } 
   };
   return (
     <>
+    <Navbar/>
     <Formik
       initialValues={{values,bookImage:""}}
       enableReinitialize={true} 
@@ -84,8 +86,8 @@ function EditBook() {
     >
 
       {(props) => 
-          <Form className="add-book row g-3 p-2 rounded my-3" onSubmit={props.handleSubmit}>
-            <h2 className="text-center">Update Book</h2>
+        <Form className="add-book row g-3 p-2 rounded my-3" onSubmit={props.handleSubmit}>
+          <h2 className="text-center">Update Book</h2>
 
             <div className="col-md-6">
               <label htmlFor="bookTitle" className="form-label">Title</label>
@@ -259,13 +261,13 @@ function EditBook() {
                 onChange={(e) => {
                   const file = e.target.files[0];
                   if (file) {
-                      setImageSelected(file);
+                    setImageSelected(file);
                   }
                 }}
               /> 
               <ErrorMessage name="bookImage" component="div" /> 
             </div> 
-            <div className="col-12 text-center pt-5">
+            <div className="col-12 text-center pt-3">
               <button type="submit" className="btn btn-primary "> Update</button>
             </div>
           </Form>

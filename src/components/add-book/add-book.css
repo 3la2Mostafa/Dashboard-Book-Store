@@ -10,14 +10,15 @@
     letter-spacing: 1px;
     font-size: 0.8rem !important;
 }
-.btn{
+.btn-book{
     color: white !important;
     font-size: 1rem !important;
     font-weight: bolder !important;
     border-color: #ccafaf !important;
     background-color: #ccafaf !important;
+    width: 120px !important;
 }
-.btn:hover{
+.btn-book:hover{
     background-color: white !important;
     color: #900c3f !important;
 }
