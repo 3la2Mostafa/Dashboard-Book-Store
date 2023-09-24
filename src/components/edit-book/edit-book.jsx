@@ -11,7 +11,7 @@ import Navbar from "../nav/nav";
 
 function EditBook() {
   const { id } = useParams();
-  const selectedBook = useSelector((state) =>state.books.books.find((book) => book._id === id));
+  const selectedBook = useSelector((state) =>state.books.books.books.find((book) => book._id === id));
 
 
   const [authors, setAuthors] = useState([]);

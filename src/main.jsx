@@ -5,13 +5,13 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import store from "./store/store";
 import { Provider } from "react-redux";
-import Loading from "./components/testComponents/Loading.jsx";
+import Spinner from "./components/Loader/loader";
 
 const LazyApp = lazy(() => import('./App.jsx'));
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Provider store={store}>
-      <Suspense fallback={ <Loading /> }>
+      <Suspense fallback={ <Spinner /> }>
         <Routes>
             <Route path="/*" element={<LazyApp />} />
         </Routes>

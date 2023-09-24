@@ -13,6 +13,7 @@ import ViewUsers from "./components/view/users/ViewUsers";
 import LoginAdmin from "./components/login-admin/login";
 import IsAuth from "./components/auth";
 import NotFound from './components/not-found/not-found';
+import Spinner from "./components/Loader/loader";
 
 
 
