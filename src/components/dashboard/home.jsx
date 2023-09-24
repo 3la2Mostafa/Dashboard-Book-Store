@@ -9,13 +9,13 @@ function Home() {
 
   var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-  const books = useSelector((state) => state.books.books);
+  const books = useSelector((state) => state.books.books.totalItems);
   const categories = useSelector((state) => state.categories);
   const orders = useSelector((state) => state.orders);
   const admins = useSelector((state) => state.admins);
   const users = useSelector((state) => state.users);
   ///////////////////////////////////////////////////
-  const booksLength = books.length;
+  const booksLength = books;
   const categoriesLength = categories.length;
   const ordersLength = orders.length;
   const adminsLength = admins.length;
