@@ -14,10 +14,6 @@ function AurhersAndCategories() {
 
   const categoriesXD = useSelector((state) =>state.categories);
   console.log(`categories---->`, categoriesXD);
-  
-
-  
-
 
   useEffect(() => {
     setAuthors(authorsXD.map(author => ({ value: author._id, label: author.name })));
@@ -36,21 +32,20 @@ function AurhersAndCategories() {
 
   return (
     <>
-     <h1 className='text-center'>AuthorsAndCategories</h1>
+      <h1 className='text-center'>AuthorsAndCategories</h1>
       
-         <Select styles={{container: (provided) => ({...provided,width: '300px',margin: '0 auto'})}}
-          value={selectedAuthor}
-          onChange={handleAuthorChange}
-          options={authors}
-          placeholder="Select an author..."
-         />
+      <Select styles={{container: (provided) => ({...provided,width: '300px',margin: '0 auto'})}}
+        value={selectedAuthor}
+        onChange={handleAuthorChange}
+        options={authors}
+        placeholder="Select an author..."/>
 
-         <Select styles={{container: (provided) => ({...provided,width: '300px',margin: '0 auto'})}}
-          value={selectedCategory}
-          onChange={handleCategoryChange}
-          options={categories}
-          placeholder="Select an author..."
-         />
+      <Select styles={{container: (provided) => ({...provided,width: '300px',margin: '0 auto'})}}
+        value={selectedCategory}
+        onChange={handleCategoryChange}
+        options={categories}
+        placeholder="Select an author..."
+      />
       
     </>
   )

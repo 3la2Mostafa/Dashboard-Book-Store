@@ -3,27 +3,29 @@ import { useSelector,useDispatch } from "react-redux";
 import { bookId } from '../../store/reducer/booksSlice';
 import { Link } from "react-router-dom";
 import "../../style.css";
-import Axios from 'axios';
 import Navbar from "../nav/nav";
+import axiosInstance from "../../config/axiosConfig";
 
 
 function Books() {
-  const dispatch = useDispatch();
-  
+
   const books = useSelector((state) => state.books.books);
   console.log("Books---->" , books);
   
-  
   const deleteBook  = (bookId)=>{
-    Axios.delete(`http://localhost:3001/books/${bookId}`).then(
-      response => { console.log('Book deleted successfully', response); })
-      .catch(error => {
-        console.log('Error deleting book', error);
-      });
-  }
+    axiosInstance.delete(`/books/${bookId}`).then(
+      response => { 
+        swal("Delete book" , "Book has been deleted successfully" ,"success" , {button:false});
+        console.log('Book deleted successfully', response);
+      }
+    ).catch(error => {
+      console.log('Error deleting book', error);
+    });
+  };
+
   const updateBook = (ID) => {
     dispatch(bookId(ID));
-  }
+  };
 
   return (
     <>

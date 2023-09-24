@@ -1,9 +1,8 @@
-import { useLocation, Navigate, Outlet} from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import swal from "sweetalert";
 
 const IsAuth = () => {
 
-  const location = useLocation();
   const IsAdmin = () =>{
     const token = localStorage.getItem("token");
     if (token){
@@ -11,11 +10,15 @@ const IsAuth = () => {
     }
     swal("Warning", "only Admin can accsses this" ,"warning", {button:false});
     return false;
-  }
+  };
 
   return (
     <>
-      {IsAdmin() ? (<Outlet />) : (<Navigate to="/login" state={{ from: location }} replace />)}
+      {IsAdmin() ? (
+        <Outlet />
+      ) : (
+        <Navigate to="/login" replace={true} />
+      )}
     </>
   );
 };

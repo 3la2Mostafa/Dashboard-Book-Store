@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route , Routes } from "react-router-dom";
-import Navbar from "./components/nav/nav";
-import Footer from "./components/footer/footer";
 import Category from "./components/category/category";
 import AddBook from "./components/add-book/add-book";
 import EditBook from "./components/edit-book/edit-book";
-import AddAdmin from "./components/add-admin/add-admin";
 import Users from "./components/users/users";
 import Orders from "./components/order/order";
 import Admins from "./components/admins/admins";
@@ -15,7 +12,8 @@ import ViewBooks from "./components/view/books/viewBooks";
 import ViewUsers from "./components/view/users/ViewUsers";
 import LoginAdmin from "./components/login-admin/login";
 import IsAuth from "./components/auth";
-import Loading from "./components/testComponents/Loading";
+import NotFound from './components/not-found/not-found';
+
 
 
 function App() {
@@ -26,14 +24,14 @@ function App() {
         <Route path="/login" element={<LoginAdmin />}></Route>
         <Route path="/dashboard" element={<Home />}></Route>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/test" element={<Loading />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+        <Route path="load" element={<Spinner />}></Route>
         <Route element={<IsAuth />}>
           <>
             <Route path="/category" element={<Category />}></Route>
             <Route path="/books" element={<Books />}></Route>
             <Route path="/addbook" element={<AddBook />}></Route>
-            <Route path="/editbook" element={<EditBook />}></Route>
-            <Route path="/addadmin" element={<AddAdmin />}></Route>
+            <Route path="/editbook/:id" element={<EditBook />}></Route>
             <Route path="/admins" element={<Admins />}></Route>
             <Route path="/users" element={<Users />}></Route>
             <Route path="/orders" element={<Orders />}></Route>

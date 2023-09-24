@@ -19,12 +19,12 @@
 
 .btn{
     margin-bottom: 5px;
-    background-color: brown !important;
-    width: 70px;
+    background-color: #900c3f !important;
+    width: 80px;
 }
 
 .info-table td p{
-    height: 110px;
+    /* height: 110px; */
     overflow: hidden;
     text-align: justify;
     line-height: 1.22;
@@ -39,14 +39,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
     margin-bottom: 10px; 
     background-color: #ffffff; 
-
 }
 
 table thead tr th {
     background-color: #c78894!important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
     border-radius:'20px'
-
 }
 table thead  {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 

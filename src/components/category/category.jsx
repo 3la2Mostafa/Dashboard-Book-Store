@@ -26,6 +26,17 @@ function Category() {
   const categories = useSelector((state) => state.categories);
   console.log("Category ---->" , categories);
 
+  const deleteCategory  = (catId)=>{
+    axiosInstance.delete(`/categories/${catId}`).then(
+      response => { 
+        swal("Delete category" , "Category has been deleted successfully" ,"success" , {button:false});
+        console.log('Category deleted successfully', response);
+      }
+    ).catch(error => {
+      console.log('Error deleting category', error);
+    });
+  };
+
   const handleSubmit = async (object) => {
     try {
       const createdCat = await axiosInstance.post("/categories", object);
@@ -62,9 +73,9 @@ function Category() {
       <div className="text-bg-light p-2 text-center" style={{ marginLeft: '20%' }}>
         <h2 className="text-dark p-2">Count of Category : {categories.length} </h2>
       </div>
-      <div className="p-4 container-width" >
+      <div className="p-2 container-width" >
       <table className="table table-hover m-0">
-        <thead className="text-center">
+        <thead className="text-center rounded">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Action</th>
@@ -76,8 +87,8 @@ function Category() {
               <tr key={category._id}>
                 <td>{category.name}</td>
                 <td>
-                  <button type="button" className="btn btn-outline-primary mx-2">Update</button>
-                  <button type="button" className="btn btn-outline-primary">Delete</button>
+                  <button type="button" className="btn mx-2">Update</button>
+                  <button type="button" className="btn" onClick={()=>deleteCategory(category._id)}>Delete</button>
                 </td>
               </tr>
             );

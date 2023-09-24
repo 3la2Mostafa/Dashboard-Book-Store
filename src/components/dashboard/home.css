@@ -1,10 +1,14 @@
 .dashboard {
-    margin-top: 1% !important;
+    margin-top: 5% !important;
+    border-radius: 10px;
+    margin: 0px 15px 10px 0px;
+    margin-left: 22% !important;
     background-color: white;
 }
 
 .dashboard .card {
-    width: 22.5%;
+    padding: 0px 10px;
+    width: 23%;
     background-color: #b78181;
 }
 
