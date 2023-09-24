@@ -20,7 +20,7 @@ function Navbar() {
     <>
       <div className="bg d-flex flex-column flex-shrink-0 p-3">
         <div className="div-navbar">
-        <a className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="index.html">
+        <a className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="#">
             <img src="/assets/img/nav_img.png" alt="logo" height="50" />
             <span className="fs-5 logo" style={{fontFamily:'cursive'}}>Alef BookStore</span>
         </a>
@@ -71,14 +71,7 @@ function Navbar() {
             <span>Add Admin</span>
         </NavLink>
         <hr/>
-
-        <NavLink to='/logout' className="nav-link" aria-current="page">
-            <i className="bi bi-door-open"></i>
-            <span>LogOut</span>
-        </NavLink>
-     
        
-
         <NavLink to='/login' className="nav-link" aria-current="page" onClick={handleLogout}>
             <i className="bi bi-door-open"></i>
             <span>LogOut</span>

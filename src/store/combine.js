@@ -13,7 +13,6 @@ export default combineReducers({
     categories:categorySlice,
     users:userSlice,
     admins:adminSlice,
-    authors:authorsSlice
-    // loader :loaderSlice,
+    authors:authorsSlice,
     orders:orderSlice,
 });

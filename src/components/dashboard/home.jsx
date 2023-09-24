@@ -9,7 +9,7 @@ function Home() {
   var CanvasJS = CanvasJSReact.CanvasJS;
   var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-  const books = useSelector((state) => state.books);
+  const books = useSelector((state) => state.books.books);
   const categories = useSelector((state) => state.categories);
   const orders = useSelector((state) => state.orders);
   const admins = useSelector((state) => state.admins);

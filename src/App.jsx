@@ -15,6 +15,7 @@ import ViewBooks from "./components/view/books/viewBooks";
 import ViewUsers from "./components/view/users/ViewUsers";
 import LoginAdmin from "./components/login-admin/login";
 import IsAuth from "./components/auth";
+import Loading from "./components/testComponents/Loading";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<LoginAdmin />}></Route>
         <Route path="/dashboard" element={<Home />}></Route>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/test" element={<Loading />}></Route>
         <Route element={<IsAuth />}>
           <>
             <Route path="/category" element={<Category />}></Route>

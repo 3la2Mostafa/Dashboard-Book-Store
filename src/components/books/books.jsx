@@ -8,8 +8,10 @@ import Navbar from "../nav/nav";
 
 
 function Books() {
+  const dispatch = useDispatch();
+  
   const books = useSelector((state) => state.books.books);
-  console.log("Bookss---->" , books);
+  console.log("Books---->" , books);
   
   
   const deleteBook  = (bookId)=>{
@@ -19,15 +21,14 @@ function Books() {
         console.log('Error deleting book', error);
       });
   }
-  const dispatch = useDispatch();
   const updateBook = (ID) => {
     dispatch(bookId(ID));
   }
 
   return (
     <>
-    <Navbar/>
-      <div className="p-4 container-width" >
+    <Navbar />
+    <div className="p-4 container-width">
         <table className="table table-hover">
           <thead className=" text-center" >
             <tr className="rounded">
@@ -64,8 +65,8 @@ function Books() {
             })}
           </tbody>
         </table>
-      </div>
-    </>
+    </div>
+  </>
   );
 }
 
