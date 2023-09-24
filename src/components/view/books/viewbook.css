@@ -15,17 +15,9 @@
     width: 100%;
 }
 .view-book .card-body span{
-    color: black;
+    color: rgb(245, 255, 104);
 }
-.view-book .card-body p {
+.view-book .card-body p{
     font-size: 0.8rem !important;
+    text-align: justify;
 }
-/* btn */
-/* .view{
-    color: #900c3f !important;
-    border-color: #900c3f !important;
-}
-.view:hover{
-    background-color: #900c3f !important;
-    color: white !important;
-} */

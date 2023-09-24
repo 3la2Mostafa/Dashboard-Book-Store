@@ -22,6 +22,5 @@ const IsAuth = () => {
     </>
   );
 };
-
 export default IsAuth;
 

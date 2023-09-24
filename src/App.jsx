@@ -1,7 +1,5 @@
 import React from "react";
 import { Route , Routes } from "react-router-dom";
-import Navbar from "./components/nav/nav";
-import Footer from "./components/footer/footer";
 import Category from "./components/category/category";
 import AddBook from "./components/add-book/add-book";
 import EditBook from "./components/edit-book/edit-book";
@@ -15,7 +13,7 @@ import ViewUsers from "./components/view/users/ViewUsers";
 import LoginAdmin from "./components/login-admin/login";
 import IsAuth from "./components/auth";
 import NotFound from './components/not-found/not-found';
-import Spinner from './components/Loader/loader';
+
 
 
 function App() {

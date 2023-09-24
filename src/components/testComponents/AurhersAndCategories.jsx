@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "../../config/axiosConfig";
 import { useSelector } from 'react-redux';
 import Select from 'react-select';
-
+                      //{{note: this component for testing select package -> path/test}}
 function AurhersAndCategories() {
   
   const [authors, setAuthors] = useState([]);
