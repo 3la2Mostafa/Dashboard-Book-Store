@@ -1,8 +1,8 @@
-import axios from "../config/axiosConfig";
+import axiosInstance from "../config/axiosConfig";
 
 export const getUsers = async () => {
   try {
-    const result = await axios.get(`/users`)
+    const result = await axiosInstance.get(`/users`)
     console.log('result', result.data);
     return result.data;
   } catch (error) {

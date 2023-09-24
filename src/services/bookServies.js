@@ -1,8 +1,8 @@
-import axios from "../config/axiosConfig";
+import axiosInstance from "../config/axiosConfig";
 
 export const getBooks = async (page) => {
   try {
-    const result = await axios.get(`/books?page=${page}&size=8`)
+    const result = await axiosInstance.get(`/books?page=${page}&size=8`)
     console.log('result', result.data);
     console.log('page from service', page);
     return result.data;
