@@ -6,7 +6,7 @@ const Spinner = () => {
   return (
     <>
       <div className="cont-loader">
-        <div className="loader book">
+        <div className="loader book-load">
           <figure className="page"></figure>
           <figure className="page"></figure>
           <figure className="page"></figure>

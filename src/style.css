@@ -63,3 +63,6 @@ table thead tr th {
 .rounded th:last-child {
     border-top-right-radius: 10px;
 }
+.paginate{
+    color: #900c3f;
+}

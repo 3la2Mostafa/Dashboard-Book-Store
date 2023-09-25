@@ -16,25 +16,22 @@ function Books() {
 
   /////////////////////////////////////////////////////
   ///Select data of book from reducer
-  const Books = useSelector((state) => state.books.books.books);
-  const currentpage = useSelector((state) => state.books.books.currentPage);
-  const totalpage = useSelector((state) => state.books.books.totalPages);
+  const books = useSelector((state) => state.books.books);
+  console.log(books);
 
   ////////////////////////////////////////////////
   const [page, setPage] = useState(0);
-  const [books, setBook] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
 
  console.log("---------------------------------------")
   const fetchBook = async (query) => {
-    console.log("book --->" , books);
-    console.log("Book from reducer--->" , Books);
+    console.log("book ---------->" , books);
 
     getBooks(query)
       .then((response) => {
         const { books, totalPages } = response;
         setTotalPages(totalPages);
-        setBook(books);
+        dispatch(setBooks(books));
         console.log("res paginate --->", response);
         console.log("page--->",page);
       })
@@ -42,20 +39,7 @@ function Books() {
         console.log("error in fetch book --> ",e);
       }
     );
-    // dispatch(setBooks());
   };
-
-  // const fetchBook = async (page) => {
-  //   try {
-  //     const response = await axiosInstance.get(`/books?page=${page}&size=8`);
-  //     const { books, totalPages } = response.data;
-  //     setBook(books);
-  //     setTotalPages(totalPages);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   useEffect(() => {
     fetchBook(page);
@@ -139,22 +123,22 @@ function Books() {
             })}
           </tbody>
         </table>
-        {/*  */}
+        {/* Pagination 1*/}
         <nav aria-label="Page navigation example"style={{marginLeft:"45%"}}>
           <ul className="pagination">
             <li className="page-item">
               <a className="page-link"  aria-label="Previous" disabled={page === 0} onClick={()=>handlePrev()}>
-                <span aria-hidden="true">&laquo;</span>
+                <span aria-hidden="true" className="paginate">Prev</span>
               </a>
             </li>
             <li className="page-item">
-              <a className="page-link" aria-label="Next" onClick={()=>handleNext()}>
-                <span aria-hidden="true">&raquo;</span>
+              <a className="page-link" aria-label="Next" disabled={page == totalPages } onClick={()=>handleNext()}>
+                <span aria-hidden="true" className="paginate">Next</span>
               </a>
             </li>
           </ul>
         </nav>
-        {/*  */}
+        {/* Pagination 2*/}
         <div className="text-center" style={{marginLeft:"35%"}}>
         <Pagination count={totalPages} page={page}
         siblingCount={1}
