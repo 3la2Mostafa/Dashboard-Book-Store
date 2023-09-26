@@ -27,8 +27,7 @@ function Books() {
   const fetchBook = async (query) => {
     console.log("book ---------->" , books);
 
-    getBooks(query)
-      .then((response) => {
+    getBooks(query).then((response) => {
         const { books, totalPages } = response;
         setTotalPages(totalPages);
         dispatch(setBooks(books));
@@ -44,6 +43,7 @@ function Books() {
   useEffect(() => {
     fetchBook(page);
   }, [page]);
+
 
   ////////////////////////////////////////////////
   ///pagination

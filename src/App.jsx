@@ -26,7 +26,7 @@ function App() {
         <Route path="/dashboard" element={<Home />}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="*" element={<NotFound />}></Route>
-        <Route path="load" element={<Spinner />}></Route>
+        {/* <Route path="load" element={<Spinner />}></Route> */}
         <Route element={<IsAuth />}>
           <>
             <Route path="/category" element={<Category />}></Route>
