@@ -37,10 +37,10 @@ function Orders() {
           </tr>
         </thead>
         <tbody className="text-center m-2">
-          {orders.map((order)=>{
+          {orders.map((order,index)=>{
             return(
-              <tr key={order._id} className="info-table">
-                <td className="text-left align-middle fw-bolder"><h6>{order.user.firstName} {order.user.lastName}</h6></td>
+              <tr key={index} className="info-table">
+                <td className="text-left align-middle fw-bolder"><h6>{order?.user?.firstName} {order?.user?.lastName}</h6></td>
                 <td className="text-left align-middle">{order.address}</td>
                 <td className="text-left align-middle">{order.status}</td>
                 <td className="text-left align-middle">{order.paymentMethod}</td>
