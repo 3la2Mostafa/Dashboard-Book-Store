@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <Suspense fallback={ <Spinner /> }>
         <Routes>
-            <Route path="/*" element={<LazyApp />} />
+          <Route path="/*" element={<LazyApp />} />
         </Routes>
       </Suspense>
     </Provider>

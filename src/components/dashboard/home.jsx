@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 function Home() {
   var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-  const books = useSelector((state) => state.books.books.totalItems);
+  const books = useSelector((state) => state.books.initailbook.totalItems);
   const categories = useSelector((state) => state.categories);
   const orders = useSelector((state) => state.orders);
   const admins = useSelector((state) => state.admins);

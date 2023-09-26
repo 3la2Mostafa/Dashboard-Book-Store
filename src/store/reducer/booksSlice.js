@@ -4,7 +4,8 @@ import { getBooks } from "../../services/bookServies";
 const initailBooks = await getBooks();
 
 const initialState = {
-  books: [],
+  initailbook: initailBooks,
+  books:[],
   bookId :''
 }
 
@@ -13,7 +14,7 @@ export const booksSlice = createSlice({
   initialState: initialState,
   reducers: {
     setBooks: (state, action) => {
-      return state = action.payload;
+      state.books = action.payload;
     },
     bookId:(state, action) => {
       state.bookId =action.payload

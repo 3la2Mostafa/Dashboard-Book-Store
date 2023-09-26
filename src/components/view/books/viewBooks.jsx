@@ -10,7 +10,7 @@ function ViewBooks() {
   console.log("id from ViewBooks :  --->", id);
 
   const book = useSelector((state) =>
-    state.books.books.books.find((book) => book._id === id)
+    state.books.books.find((book) => book._id === id)
   );
   console.log("book from ViewBooks:------>", book);
 
