@@ -16,9 +16,8 @@ function Books() {
 
   /////////////////////////////////////////////////////
   ///Select data of book from reducer
-  const Books = useSelector((state) => state.books.books.books);
-  const currentpage = useSelector((state) => state.books.books.currentPage);
-  const totalpage = useSelector((state) => state.books.books.totalPages);
+  const Books = useSelector((state) => state.books.books);
+
 
   ////////////////////////////////////////////////
   const [page, setPage] = useState(0);
@@ -27,13 +26,13 @@ function Books() {
 
  console.log("---------------------------------------")
   const fetchBook = async (query) => {
-    console.log("book --->" , books);
+    console.log("book state --->" , books);
     console.log("Book from reducer--->" , Books);
 
-    getBooks(query)
-      .then((response) => {
+    getBooks(query).then((response) => {
         const { books, totalPages } = response;
         setTotalPages(totalPages);
+        dispatch(setBooks(books));
         setBook(books);
         console.log("res paginate --->", response);
         console.log("page--->",page);
@@ -42,24 +41,13 @@ function Books() {
         console.log("error in fetch book --> ",e);
       }
     );
-    // dispatch(setBooks());
   };
 
-  // const fetchBook = async (page) => {
-  //   try {
-  //     const response = await axiosInstance.get(`/books?page=${page}&size=8`);
-  //     const { books, totalPages } = response.data;
-  //     setBook(books);
-  //     setTotalPages(totalPages);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
+ 
   useEffect(() => {
     fetchBook(page);
   }, [page]);
+
 
   ////////////////////////////////////////////////
   ///pagination

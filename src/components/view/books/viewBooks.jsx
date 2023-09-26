@@ -7,12 +7,12 @@ import Navbar from "../../nav/nav";
 function ViewBooks() {
 
   const { id } = useParams();
-  console.log("bookdetails : id --->", id);
+  console.log("id from ViewBooks :  --->", id);
 
   const book = useSelector((state) =>
     state.books.books.books.find((book) => book._id === id)
   );
-  console.log("book:------>", book);
+  console.log("book from ViewBooks:------>", book);
 
   return (
     <>
